@@ -16,9 +16,11 @@ h3 {
   font-weight: 500;
 }
 
-p {
+p,
+li {
   line-height: 1.5em;
   margin: 0;
+  font-size: 12px;
 }
 
 section {
@@ -31,26 +33,50 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  padding: 2px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px;
+  flex: 1;
 }
 
 /* ---  Groups & Items --- */
 
 .group {
+  flex-direction: row;
+}
+
+.item-double {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.idea {
+  flex-direction: column;
+}
+
+.host-group,
+#host item {
   display: flex;
   flex-direction: column;
 }
 
-.item {
-  flex: 1;
-  margin: 10px;
-}
-
-.item-double {
-  flex: 2;
-}
-
 /* -------  Navigation ------- */
+
+#menu {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
 
 header {
   background-color: #ff385c;
@@ -66,12 +92,13 @@ header {
 
 header nav ul li {
   list-style-type: none;
+  padding: 0px 5px 0px 5px;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  font-size: 14px;
 }
 
 header nav ul li a:hover {
@@ -83,6 +110,8 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 form label {
@@ -104,6 +133,11 @@ form button {
   width: 100%;
 }
 
+.form-group {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +151,71 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav {
+    padding-top: 10px;
+  }
+
+  #menu {
+    line-height: 1.4;
+    display: flex;
+  }
+
+  #menu li {
+    margin-right: 10px;
+  }
+
+  form {
+    flex-direction: row;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item-double {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item-double img {
+    width: 50%; /* Adjust the width as needed */
+  }
+
+  .image-container {
+    text-align: center;
+  }
+
+  .image-container > img {
+    width: 100%;
+  }
+
+  p,
+  li {
+    line-height: 1.3em;
+    font-size: 14px;
+  }
+
+  #about .item-double {
+    flex: 1;
+  }
+}
