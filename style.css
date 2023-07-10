@@ -114,13 +114,17 @@ form {
   flex-direction: column;
 }
 
-form label {
+.form-container {
+  padding: 20px;
+}
+
+label {
   font-weight: bold;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
+  margin: 10px;
   width: 180px;
 }
 
@@ -137,6 +141,9 @@ form button {
   display: flex;
   align-content: center;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 2px;
+  padding-bottom: 5px;
 }
 /* -------  Footer ------- */
 
@@ -153,6 +160,8 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
+  /*--- Header ---*/
+
   header {
     display: flex;
     justify-content: space-between;
@@ -171,32 +180,47 @@ footer p {
     margin-right: 10px;
   }
 
-  .flex-container form {
-    flex-direction: row;
-    width: 100%;
-  }
-
-  form {
-    flex-direction: row;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  /* .form-container {
-    display: flex;
-    flex-shrink: 5;
-  } */
-
   .logo {
     font-size: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  /*--- Form --- */
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .form-group {
+    flex-direction: column;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  form select,
+  form input {
+    width: 100%;
+    font-size: 10px;
+    box-sizing: border-box;
+  }
+
+  input[type="date"] {
+    width: 80px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 5px;
+    margin: 2px;
+  }
+
+  /*--- General ---*/
 
   .flex-container {
     flex-direction: row;
@@ -228,5 +252,35 @@ footer p {
 
   #about .item-double {
     flex: 1;
+  }
+}
+
+@media all and (min-width: 600px) {
+  /*--- Form --- */
+
+  .form-group {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  form select,
+  form input {
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  input[type="date"] {
+    width: 100%;
+  }
+
+  form button {
+    font-size: 15px;
+    padding: 6px;
+    margin: 2px;
+  }
+
+  input[type="date"] {
+    width: 100%;
   }
 }
