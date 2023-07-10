@@ -171,14 +171,25 @@ footer p {
     margin-right: 10px;
   }
 
+  .flex-container form {
+    flex-direction: row;
+    width: 100%;
+  }
+
   form {
     flex-direction: row;
   }
 
   .form-group {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 10px;
   }
+
+  /* .form-container {
+    display: flex;
+    flex-shrink: 5;
+  } */
 
   .logo {
     font-size: 42px;
